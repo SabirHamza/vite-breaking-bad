@@ -1,32 +1,18 @@
 <script>
-import axios from 'axios'
+import CaracterCard from './CaracterCard.vue'
 
 export default {
-    data() {
-        return {
-            caracters: []
-        }
-    },
 
-    created() {
-        axios
-            .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0")
-            .then((response) => {
-                console.log(response);
+    props: { caracters: Array },
 
-                this.caracters = response.data.data
-
-                console.log(this.caracters);
-            })
-    }
+    components: { CaracterCard }
 }
 
 </script>
 
 <template>
-    <div v-for="caracter in caracters" class="col-2">
-        <img :src="caracter.card_images[0].image_url" class="img-fluid" alt="">
-        <p>{{ caracter.name }}</p>
+    <div v-for="caracter in caracters">
+        <CaracterCard :img="caracter.card_images[0].image_url" :name="caracter.name" :type="caracter.archetype" />
     </div>
 </template>
 
