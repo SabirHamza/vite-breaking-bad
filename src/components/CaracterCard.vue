@@ -10,8 +10,8 @@ export default {
 
 <template>
     <div class="col text-center px-2">
-        <div class="cards">
-            <img :src="img" class="img-fluid" alt="">
+        <div class="cards rounded-3">
+            <img :src="img" class="img-fluid rounded-3" alt="">
             <span class="fw-bold text-light">{{ name }}</span>
             <h6 class="fw-bold py-3">{{ type }} </h6>
         </div>
