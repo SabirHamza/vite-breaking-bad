@@ -1,11 +1,12 @@
 <script>
-import MainApp from './components/MainApp.vue'
 import axios from 'axios'
+import { store } from './data/store'
+import MainApp from './components/MainApp.vue'
 
 export default {
   data() {
     return {
-      caracters: []
+      store
     }
   },
 
@@ -15,7 +16,7 @@ export default {
       .then((response) => {
         console.log(response);
 
-        this.caracters = response.data.data
+        store.caracters = response.data.data
 
         console.log(this.caracters);
       })
@@ -32,7 +33,7 @@ export default {
       <h1>Yu-Gi-Oh App</h1>
     </div>
   </header>
-  <MainApp :caracters="caracters" />
+  <MainApp />
 </template>
 
 <style></style>

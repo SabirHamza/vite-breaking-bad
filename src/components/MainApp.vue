@@ -1,9 +1,13 @@
 <script>
 import CardList from './CardList.vue';
+import { store } from '../data/store'
 
 export default {
-
-    props: { caracters: Array },
+    data() {
+        return {
+            store
+        }
+    },
 
     components: { CardList }
 }
@@ -12,9 +16,9 @@ export default {
 <template>
     <main class="py-4">
         <div class="container">
-            <div class="counter fw-bold mx-2 py-2"> Found <span>{{ caracters.length }}</span> cards</div>
+            <div class="counter fw-bold mx-2 p-2"> Found <span>{{ store.caracters.length }}</span> cards</div>
             <div class="row row-cols-5">
-                <CardList :caracters="caracters" />
+                <CardList />
             </div>
         </div>
     </main>

@@ -1,9 +1,14 @@
 <script>
 import CaracterCard from './CaracterCard.vue'
+import { store } from '../data/store'
+
 
 export default {
-
-    props: { caracters: Array },
+    data() {
+        return {
+            store
+        }
+    },
 
     components: { CaracterCard }
 }
@@ -11,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <div v-for="caracter in caracters">
+    <div v-for="caracter in store.caracters">
         <CaracterCard :img="caracter.card_images[0].image_url" :name="caracter.name" :type="caracter.archetype" />
     </div>
 </template>
