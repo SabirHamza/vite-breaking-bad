@@ -23,6 +23,12 @@ export default {
       })
   },
 
+  methods: {
+    changeapi() {
+      console.log('ciao');
+    }
+  },
+
   components: { MainApp, SelectApp }
 
 }
@@ -34,7 +40,7 @@ export default {
       <h1>Yu-Gi-Oh App</h1>
     </div>
   </header>
-  <SelectApp />
+  <SelectApp @selecttype="changeapi()" />
   <MainApp />
 </template>
 

@@ -6,15 +6,16 @@ export default {
         return {
             store
         }
-    }
+    },
+
+    emits: ["selecttype"]
 }
 </script>
 
 <template>
     <div class="container">
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-            <option selected>Open this select menu</option>
-            <option v-for="type, index in store.types">
+            <option v-for="type, index in store.types" :value="index">
                 {{ store.types[index] }}
             </option>
         </select>
