@@ -18,14 +18,12 @@ export default {
         console.log(response);
 
         store.caracters = response.data.data
-
-        console.log(this.caracters);
       })
   },
 
   methods: {
-    changeapi() {
-      console.log('ciao');
+    changeapi(param1) {
+      console.log(param1);
     }
   },
 
@@ -40,7 +38,7 @@ export default {
       <h1>Yu-Gi-Oh App</h1>
     </div>
   </header>
-  <SelectApp @selecttype="changeapi()" />
+  <SelectApp @searchtype="changeapi()" />
   <MainApp />
 </template>
 
